@@ -130,6 +130,7 @@ const Index = () => {
                 <li><a href="#services" className="text-primary-foreground hover:text-accent transition-colors font-medium">Serviços</a></li>
                 <li><a href="#equipamentos" className="text-primary-foreground hover:text-accent transition-colors font-medium">Equipamentos</a></li>
                 <li><a href="#about" className="text-primary-foreground hover:text-accent transition-colors font-medium">Sobre</a></li>
+                <li><a href="/politica" className="text-primary-foreground hover:text-accent transition-colors font-medium">Política</a></li>
                 <li><a href="#contact" className="text-primary-foreground hover:text-accent transition-colors font-medium">Contato</a></li>
               </ul>
             </nav>
