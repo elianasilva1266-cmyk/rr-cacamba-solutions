@@ -14,6 +14,7 @@ import empresa1 from "@/assets/empresa1.jpg";
 import empresa2 from "@/assets/empresa2.jpg";
 import heroCaminhao from "@/assets/hero-cacamba.jpg";
 import caminhaoRR from "@/assets/caminhao-rr.png";
+import cacambaLaranja from "@/assets/cacamba-laranja.png";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -174,8 +175,8 @@ const Index = () => {
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-48 overflow-hidden">
                 <img 
-                  src="https://www.ocscacambas.com.br/doutor/uploads/2/blog/2024/09/blog-o-que-fazer-se-a-minha-cacamba-ultrapassar-da-borda-permitida-0e776e9bd0.jpg" 
-                  alt="Caçamba de Entulho"
+                  src={cacambaLaranja} 
+                  alt="Caçamba de Entulho RR"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
