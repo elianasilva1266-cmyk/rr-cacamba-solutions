@@ -321,7 +321,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm">
-            <p>&copy; 2023 Rr Cacamba Ss LTDA - Todos os direitos reservados</p>
+            <p>&copy; 2023 RR CAÇAMBA - Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
