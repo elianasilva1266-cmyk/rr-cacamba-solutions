@@ -12,6 +12,7 @@ import cliente3 from "@/assets/cliente3.jpg";
 import cliente4 from "@/assets/cliente4.jpg";
 import empresa1 from "@/assets/empresa1.jpg";
 import empresa2 from "@/assets/empresa2.jpg";
+import heroCaminhao from "@/assets/hero-caminhao.jpg";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -117,8 +118,16 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-secondary to-primary pt-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-secondary/90 to-primary/95"></div>
+        <div 
+          className="absolute inset-0 opacity-30" 
+          style={{
+            backgroundImage: `url(${heroCaminhao})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
