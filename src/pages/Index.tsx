@@ -41,7 +41,7 @@ const Index = () => {
               <Truck className="h-8 w-8 md:h-10 md:w-10 text-accent" />
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-primary-foreground">
-                  RR <span className="text-accent">CAÇAMBA</span>
+                  RR CAÇAMBA
                 </h1>
                 <p className="text-xs text-primary-foreground/80 hidden sm:block">Aluguel de Caçambas</p>
               </div>
