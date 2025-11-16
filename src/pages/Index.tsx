@@ -119,9 +119,9 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-secondary/90 to-primary/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
         <div 
-          className="absolute inset-0 opacity-30" 
+          className="absolute inset-0" 
           style={{
             backgroundImage: `url(${heroCaminhao})`,
             backgroundSize: 'cover',
