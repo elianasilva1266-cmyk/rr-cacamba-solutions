@@ -31,16 +31,9 @@ const Index = () => {
   const equipamentos = [
     { id: 1, image: equipamento1, name: "Caminhão Caçamba" },
     { id: 2, image: equipamento2, name: "Caçamba Estacionária" },
-    { id: 3, image: equipamento3, name: "Caminhão Pipa" },
-    { id: 4, image: equipamento4, name: "Retroescavadeira" },
-    { id: 5, image: equipamento5, name: "Mini Carregadeira" },
-    { id: 6, image: equipamento6, name: "Poliguindaste" },
+    { id: 3, image: equipamento4, name: "Retroescavadeira" },
+    { id: 4, image: equipamento2, name: "Caçamba Grande" },
   ];
-
-  const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: 'start' },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
-  );
 
   const testimonials = [
     {
@@ -276,33 +269,26 @@ const Index = () => {
       </section>
 
       {/* Equipamentos */}
-      <section id="equipamentos" className="py-20 bg-accent/5">
+      <section id="equipamentos" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Equipamentos</h2>
-            <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
-            <p className="text-lg text-muted-foreground">Alguns equipamentos disponíveis</p>
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">EQUIPAMENTOS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">ALGUNS EQUIPAMENTOS</h2>
+            <div className="w-24 h-1 bg-accent mx-auto"></div>
           </div>
 
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
-              {equipamentos.map((equipamento) => (
-                <div key={equipamento.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0">
-                  <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div className="h-64 overflow-hidden bg-white flex items-center justify-center p-4">
-                      <img 
-                        src={equipamento.image} 
-                        alt={equipamento.name}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <CardContent className="p-4 text-center">
-                      <h3 className="text-lg font-bold text-primary">{equipamento.name}</h3>
-                    </CardContent>
-                  </Card>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {equipamentos.slice(0, 4).map((equipamento) => (
+              <div key={equipamento.id} className="group">
+                <div className="bg-white rounded-lg p-4 md:p-6 flex items-center justify-center h-40 md:h-48 hover:shadow-lg transition-all duration-300">
+                  <img 
+                    src={equipamento.image} 
+                    alt={equipamento.name}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
