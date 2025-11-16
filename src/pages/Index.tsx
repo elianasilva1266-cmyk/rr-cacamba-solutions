@@ -12,7 +12,7 @@ import cliente3 from "@/assets/cliente3.jpg";
 import cliente4 from "@/assets/cliente4.jpg";
 import empresa1 from "@/assets/empresa1.jpg";
 import empresa2 from "@/assets/empresa2.jpg";
-import heroCaminhao from "@/assets/hero-caminhao.jpg";
+import heroCaminhao from "@/assets/hero-cacamba.jpg";
 import caminhaoRR from "@/assets/caminhao-rr.png";
 
 const Index = () => {
