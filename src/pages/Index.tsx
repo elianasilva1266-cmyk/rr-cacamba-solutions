@@ -15,6 +15,7 @@ import empresa2 from "@/assets/empresa2.jpg";
 import heroCaminhao from "@/assets/hero-cacamba.jpg";
 import caminhaoRR from "@/assets/caminhao-rr.png";
 import cacambaLaranja from "@/assets/cacamba-laranja.png";
+import recycleBg from "@/assets/recycle-bg.jpg";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -128,6 +129,15 @@ const Index = () => {
             backgroundImage: `url(${heroCaminhao})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
+          }}
+        ></div>
+        <div 
+          className="absolute inset-0 opacity-30" 
+          style={{
+            backgroundImage: `url(${recycleBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            mixBlendMode: 'multiply'
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
