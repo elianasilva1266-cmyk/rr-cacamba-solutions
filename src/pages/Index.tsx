@@ -141,7 +141,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/75"></div>
         <div 
           className="absolute inset-0" 
           style={{
