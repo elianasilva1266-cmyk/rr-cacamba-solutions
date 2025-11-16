@@ -19,6 +19,7 @@ import caminhaoRR from "@/assets/caminhao-rr.png";
 import cacambaLaranja from "@/assets/cacamba-laranja.png";
 import recycleBg from "@/assets/recycle-bg.jpg";
 import heroBgDark from "@/assets/hero-bg-dark.jpg";
+import heroConstruction from "@/assets/hero-construction.jpg";
 import equipamento1 from "@/assets/equipamento-1.jpg";
 import equipamento2 from "@/assets/equipamento-2.jpg";
 import equipamento3 from "@/assets/equipamento-3.jpg";
@@ -140,14 +141,13 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: `url(${heroBgDark})`,
+            backgroundImage: `url(${heroConstruction})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.6)'
+            backgroundPosition: 'center'
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
