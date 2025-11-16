@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star } from "lucide-react";
+import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -130,7 +130,7 @@ const Index = () => {
                 <li><a href="#services" className="text-primary-foreground hover:text-accent transition-colors font-medium">Serviços</a></li>
                 <li><a href="#equipamentos" className="text-primary-foreground hover:text-accent transition-colors font-medium">Equipamentos</a></li>
                 <li><a href="#about" className="text-primary-foreground hover:text-accent transition-colors font-medium">Sobre</a></li>
-                <li><a href="/politica" className="text-primary-foreground hover:text-accent transition-colors font-medium">Política</a></li>
+                <li><a href="#politica" className="text-primary-foreground hover:text-accent transition-colors font-medium">Política</a></li>
                 <li><a href="#contact" className="text-primary-foreground hover:text-accent transition-colors font-medium">Contato</a></li>
               </ul>
             </nav>
@@ -377,6 +377,121 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Política */}
+      <section id="politica" className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Política da Empresa</h2>
+            <div className="w-24 h-1 bg-accent mx-auto"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Política de Qualidade */}
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <CheckCircle2 className="h-12 w-12 text-primary flex-shrink-0" />
+                  <h3 className="text-2xl font-bold text-primary">Política de Qualidade</h3>
+                </div>
+                
+                <p className="text-lg text-muted-foreground mb-6">
+                  Comprometemo-nos a oferecer serviços de transporte, locação e coleta de entulhos com qualidade, 
+                  segurança e responsabilidade ambiental, superando as expectativas dos nossos clientes.
+                </p>
+
+                <p className="text-lg font-semibold text-primary mb-4">
+                  Nossa política de qualidade baseia-se nos seguintes princípios:
+                </p>
+
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Atendimento personalizado e eficiente</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Cumprimento de prazos acordados</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Manutenção preventiva de equipamentos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Destinação ambientalmente correta de resíduos</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Melhoria contínua de processos</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Política Ambiental */}
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <Leaf className="h-12 w-12 text-primary flex-shrink-0" />
+                  <h3 className="text-2xl font-bold text-primary">Política Ambiental</h3>
+                </div>
+                
+                <p className="text-lg text-muted-foreground mb-6">
+                  Reconhecemos nossa responsabilidade com o meio ambiente e nos comprometemos a:
+                </p>
+
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">
+                      Realizar a coleta e destinação adequada de entulhos da construção civil
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">
+                      Promover a conscientização ambiental entre colaboradores e clientes
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">
+                      Adotar práticas que minimizem o impacto ambiental de nossas operações
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent font-bold text-xl">•</span>
+                    <span className="text-muted-foreground">Cumprir a legislação ambiental aplicável</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Termos e Condições */}
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <FileText className="h-12 w-12 text-primary flex-shrink-0" />
+                  <h3 className="text-2xl font-bold text-primary">Termos e Condições</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    Os serviços são prestados mediante contrato que estabelece direitos e obrigações de ambas as partes.
+                  </p>
+                  <p className="text-muted-foreground">
+                    O pagamento deve ser realizado conforme acordado no contrato de prestação de serviços.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Em caso de cancelamento, aplicam-se as condições estabelecidas no contrato.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
