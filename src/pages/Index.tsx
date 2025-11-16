@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star, FileText } from "lucide-react";
+import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star, FileText, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -29,6 +30,7 @@ import equipamento6 from "@/assets/equipamento-6.jpg";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const equipamentos = [
     { id: 1, image: equipamento1, name: "Caminhão Caçamba" },
@@ -135,6 +137,61 @@ const Index = () => {
                 <li><a href="#contact" className="text-primary-foreground hover:text-accent transition-colors font-medium">Contato</a></li>
               </ul>
             </nav>
+            
+            {/* Mobile Menu */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] bg-primary border-l border-primary-foreground/20">
+                <nav className="flex flex-col gap-6 mt-8">
+                  <a 
+                    href="#home" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Início
+                  </a>
+                  <a 
+                    href="#services" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Serviços
+                  </a>
+                  <a 
+                    href="#equipamentos" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Equipamentos
+                  </a>
+                  <a 
+                    href="#about" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sobre
+                  </a>
+                  <a 
+                    href="#politica" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Política
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Contato
+                  </a>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
