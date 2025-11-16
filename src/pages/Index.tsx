@@ -119,7 +119,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             <div className="flex items-center gap-3">
-              <Truck className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+              <Truck className="h-8 w-8 md:h-10 md:w-10 text-white" />
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-primary-foreground">
                   RR CAÇAMBA
