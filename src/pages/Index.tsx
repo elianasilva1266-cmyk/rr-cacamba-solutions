@@ -269,7 +269,7 @@ const Index = () => {
       </section>
 
       {/* Equipamentos */}
-      <section id="equipamentos" className="py-20 bg-background">
+      <section id="equipamentos" className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">EQUIPAMENTOS</p>
@@ -277,18 +277,33 @@ const Index = () => {
             <div className="w-24 h-1 bg-accent mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {equipamentos.slice(0, 4).map((equipamento) => (
-              <div key={equipamento.id} className="group">
-                <div className="bg-white rounded-lg p-4 md:p-6 flex items-center justify-center h-40 md:h-48 hover:shadow-lg transition-all duration-300">
-                  <img 
-                    src={equipamento.image} 
-                    alt={equipamento.name}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
+          <div className="relative">
+            <div className="flex animate-scroll-left">
+              {/* Primeira sequência */}
+              {equipamentos.map((equipamento) => (
+                <div key={`first-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
+                  <div className="bg-white rounded-lg p-6 flex items-center justify-center h-48 hover:shadow-lg transition-all duration-300">
+                    <img 
+                      src={equipamento.image} 
+                      alt={equipamento.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+              {/* Segunda sequência (duplicada para loop infinito) */}
+              {equipamentos.map((equipamento) => (
+                <div key={`second-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
+                  <div className="bg-white rounded-lg p-6 flex items-center justify-center h-48 hover:shadow-lg transition-all duration-300">
+                    <img 
+                      src={equipamento.image} 
+                      alt={equipamento.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
