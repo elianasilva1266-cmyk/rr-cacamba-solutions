@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import cliente1 from "@/assets/cliente1.jpg";
 import cliente2 from "@/assets/cliente2.jpg";
 import cliente3 from "@/assets/cliente3.jpg";
@@ -16,9 +18,29 @@ import heroCaminhao from "@/assets/hero-cacamba.jpg";
 import caminhaoRR from "@/assets/caminhao-rr.png";
 import cacambaLaranja from "@/assets/cacamba-laranja.png";
 import recycleBg from "@/assets/recycle-bg.jpg";
+import equipamento1 from "@/assets/equipamento-1.jpg";
+import equipamento2 from "@/assets/equipamento-2.jpg";
+import equipamento3 from "@/assets/equipamento-3.jpg";
+import equipamento4 from "@/assets/equipamento-4.jpg";
+import equipamento5 from "@/assets/equipamento-5.jpg";
+import equipamento6 from "@/assets/equipamento-6.jpg";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const equipamentos = [
+    { id: 1, image: equipamento1, name: "Caminhão Caçamba" },
+    { id: 2, image: equipamento2, name: "Caçamba Estacionária" },
+    { id: 3, image: equipamento3, name: "Caminhão Pipa" },
+    { id: 4, image: equipamento4, name: "Retroescavadeira" },
+    { id: 5, image: equipamento5, name: "Mini Carregadeira" },
+    { id: 6, image: equipamento6, name: "Poliguindaste" },
+  ];
+
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: 'start' },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
 
   const testimonials = [
     {
@@ -112,6 +134,7 @@ const Index = () => {
               <ul className="flex gap-6">
                 <li><a href="#home" className="text-primary-foreground hover:text-accent transition-colors font-medium">Início</a></li>
                 <li><a href="#services" className="text-primary-foreground hover:text-accent transition-colors font-medium">Serviços</a></li>
+                <li><a href="#equipamentos" className="text-primary-foreground hover:text-accent transition-colors font-medium">Equipamentos</a></li>
                 <li><a href="#about" className="text-primary-foreground hover:text-accent transition-colors font-medium">Sobre</a></li>
                 <li><a href="#contact" className="text-primary-foreground hover:text-accent transition-colors font-medium">Contato</a></li>
               </ul>
@@ -247,6 +270,38 @@ const Index = () => {
                 <h4 className="font-bold text-lg mb-2">Responsabilidade Ambiental</h4>
                 <p className="text-sm text-muted-foreground">Descarte consciente e sustentável</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Equipamentos */}
+      <section id="equipamentos" className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Equipamentos</h2>
+            <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
+            <p className="text-lg text-muted-foreground">Alguns equipamentos disponíveis</p>
+          </div>
+
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {equipamentos.map((equipamento) => (
+                <div key={equipamento.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0">
+                  <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div className="h-64 overflow-hidden bg-white flex items-center justify-center p-4">
+                      <img 
+                        src={equipamento.image} 
+                        alt={equipamento.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <CardContent className="p-4 text-center">
+                      <h3 className="text-lg font-bold text-primary">{equipamento.name}</h3>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
         </div>
