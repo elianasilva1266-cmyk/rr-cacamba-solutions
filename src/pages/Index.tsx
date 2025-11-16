@@ -13,6 +13,7 @@ import cliente4 from "@/assets/cliente4.jpg";
 import empresa1 from "@/assets/empresa1.jpg";
 import empresa2 from "@/assets/empresa2.jpg";
 import heroCaminhao from "@/assets/hero-caminhao.jpg";
+import caminhaoRR from "@/assets/caminhao-rr.png";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -265,8 +266,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://cacambasamaral.com.br/wp-content/uploads/2020/08/Caminhao-Entulho-3.png" 
-                alt="Sobre a RR Caçamba"
+                src={caminhaoRR}
+                alt="Caminhão RR Caçamba"
                 className="rounded-lg shadow-2xl w-full"
               />
             </div>
