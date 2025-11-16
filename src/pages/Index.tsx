@@ -131,16 +131,16 @@ const Index = () => {
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
               Aluguel de Caçambas de Entulho
             </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
+            <p className="text-xl md:text-2xl text-white font-medium mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 drop-shadow-xl [text-shadow:_1px_1px_6px_rgb(0_0_0_/_70%)]">
               Solução completa para descarte de resíduos da construção civil. Atendemos toda a região de São Paulo com agilidade e segurança.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
               <Button 
                 size="lg" 
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base md:text-lg px-8 py-6 shadow-2xl hover:shadow-[0_0_30px_rgba(230,221,59,0.5)] transition-all hover:-translate-y-1 hover:scale-105"
                 onClick={() => window.open(whatsappLink, '_blank')}
               >
                 <Phone className="mr-2 h-5 w-5" />
@@ -148,7 +148,7 @@ const Index = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold text-base md:text-lg px-8 py-6 shadow-2xl hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all hover:-translate-y-1 hover:scale-105"
                 onClick={() => window.open(whatsappLink, '_blank')}
               >
                 <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
