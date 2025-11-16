@@ -18,6 +18,7 @@ import heroCaminhao from "@/assets/hero-cacamba.jpg";
 import caminhaoRR from "@/assets/caminhao-rr.png";
 import cacambaLaranja from "@/assets/cacamba-laranja.png";
 import recycleBg from "@/assets/recycle-bg.jpg";
+import heroBgDark from "@/assets/hero-bg-dark.jpg";
 import equipamento1 from "@/assets/equipamento-1.jpg";
 import equipamento2 from "@/assets/equipamento-2.jpg";
 import equipamento3 from "@/assets/equipamento-3.jpg";
@@ -138,31 +139,23 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: `url(${heroCaminhao})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
-        <div 
-          className="absolute inset-0 opacity-30" 
-          style={{
-            backgroundImage: `url(${recycleBg})`,
+            backgroundImage: `url(${heroBgDark})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            mixBlendMode: 'multiply'
+            filter: 'brightness(0.6)'
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-              Aluguel de Caçambas de Entulho
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+              Soluções em Transporte e Locação
             </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
-              Solução completa para descarte de resíduos da construção civil. Atendemos toda a região de São Paulo com agilidade e segurança.
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
+              Há mais de 14 anos oferecendo serviços de qualidade em locações, transportes e coletas de entulhos em São Paulo e região.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
               <Button 
