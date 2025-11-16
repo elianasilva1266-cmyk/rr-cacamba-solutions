@@ -1,13 +1,71 @@
 import { useState, useEffect } from "react";
-import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield } from "lucide-react";
+import { Truck, Phone, MapPin, Building2, Factory, CheckCircle2, Leaf, Clock, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import cliente1 from "@/assets/cliente1.jpg";
+import cliente2 from "@/assets/cliente2.jpg";
+import cliente3 from "@/assets/cliente3.jpg";
+import cliente4 from "@/assets/cliente4.jpg";
+import empresa1 from "@/assets/empresa1.jpg";
+import empresa2 from "@/assets/empresa2.jpg";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const testimonials = [
+    {
+      name: "Carlos Silva",
+      location: "Mooca, São Paulo",
+      type: "pessoa",
+      rating: 5,
+      image: cliente1,
+      text: "Excelente serviço! A caçamba chegou no horário combinado e a retirada foi super rápida. Recomendo demais para quem está fazendo reforma."
+    },
+    {
+      name: "Mariana Santos",
+      location: "Vila Mariana, São Paulo",
+      type: "pessoa",
+      rating: 5,
+      image: cliente2,
+      text: "Empresa muito profissional. Fiz a reforma da minha casa e precisei de 2 caçambas. O atendimento foi perfeito do início ao fim!"
+    },
+    {
+      name: "Rafael Oliveira",
+      location: "Pinheiros, São Paulo",
+      type: "pessoa",
+      rating: 5,
+      image: cliente3,
+      text: "Como arquiteto, sempre indico a RR Caçamba para meus clientes. Serviço de qualidade, pontual e com preço justo."
+    },
+    {
+      name: "Dona Maria Conceição",
+      location: "Santana, São Paulo",
+      type: "pessoa",
+      rating: 5,
+      image: cliente4,
+      text: "Precisei limpar meu quintal e eles foram muito atenciosos. Explicaram tudo direitinho e me ajudaram bastante. Muito obrigada!"
+    },
+    {
+      name: "Construtora Alves & Filhos",
+      location: "Itaim Bibi, São Paulo",
+      type: "empresa",
+      rating: 5,
+      image: empresa1,
+      text: "Trabalhamos com a RR Caçamba há mais de 2 anos. Nunca tivemos problemas. São pontuais, organizados e têm ótimos preços para grandes volumes."
+    },
+    {
+      name: "Incorporadora Urbana SP",
+      location: "Brooklin, São Paulo",
+      type: "empresa",
+      rating: 5,
+      image: empresa2,
+      text: "Parceiro confiável para nossos empreendimentos. Já utilizamos em mais de 15 obras e sempre com excelente resultado. Equipe muito profissional!"
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -203,6 +261,51 @@ const Index = () => {
                 className="rounded-lg shadow-2xl w-full"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">O Que Nossos Clientes Dizem</h2>
+            <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
+            <p className="text-lg text-muted-foreground">Avaliações reais de clientes de São Paulo</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <Avatar className="h-16 w-16 border-2 border-primary">
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                      <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {testimonial.location}
+                      </p>
+                      {testimonial.type === "empresa" && (
+                        <p className="text-xs text-primary font-medium mt-1 flex items-center gap-1">
+                          <Building2 className="h-3 w-3" />
+                          Pessoa Jurídica
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
