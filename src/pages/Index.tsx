@@ -192,7 +192,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={cacambaLaranja} 
@@ -201,12 +201,12 @@ const Index = () => {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-3">Aluguel de Caçambas</h3>
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Aluguel de Caçambas</h3>
                 <p className="text-muted-foreground">Caçambas de diversos tamanhos para atender sua necessidade. Ideal para obras, reformas e limpezas.</p>
               </CardContent>
             </Card>
 
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary">
               <div className="h-48 overflow-hidden">
                 <img 
                   src="https://www.carmo.rj.gov.br/media/k2/items/cache/f863e4fb1b47b206b2276d9b70a5b183_XL.webp?t=20211222_120800" 
