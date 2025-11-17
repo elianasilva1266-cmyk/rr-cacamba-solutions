@@ -375,7 +375,7 @@ const Index = () => {
                 Trabalhamos com transparência, responsabilidade e compromisso com a satisfação total de nossos clientes.
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <Shield className="h-16 w-16 text-accent" />
+                <Shield className="h-16 w-16 text-green-500" />
                 <div>
                   <p className="font-bold text-xl">Compromisso com a Excelência</p>
                   <p className="text-white/80">Atendimento profissional e de qualidade</p>
