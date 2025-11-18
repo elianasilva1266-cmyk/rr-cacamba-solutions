@@ -42,7 +42,7 @@ const Index = () => {
   const testimonials = [
     {
       name: "Carlos Silva",
-      location: "Mooca, São Paulo",
+      location: "Centro, Jundiaí",
       type: "pessoa",
       rating: 5,
       image: cliente1,
@@ -50,7 +50,7 @@ const Index = () => {
     },
     {
       name: "Mariana Santos",
-      location: "Vila Mariana, São Paulo",
+      location: "Vila Arens, Jundiaí",
       type: "pessoa",
       rating: 5,
       image: cliente2,
@@ -58,15 +58,15 @@ const Index = () => {
     },
     {
       name: "Rafael Oliveira",
-      location: "Pinheiros, São Paulo",
+      location: "Anhangabaú, Jundiaí",
       type: "pessoa",
       rating: 5,
       image: cliente3,
-      text: "Como arquiteto, sempre indico a RR Caçamba para meus clientes. Serviço de qualidade, pontual e com preço justo."
+      text: "Como arquiteto, sempre indico a P&J Entulho para meus clientes. Serviço de qualidade, pontual e com preço justo."
     },
     {
       name: "Dona Maria Conceição",
-      location: "Santana, São Paulo",
+      location: "Jardim Ermida, Jundiaí",
       type: "pessoa",
       rating: 5,
       image: cliente4,
@@ -74,15 +74,15 @@ const Index = () => {
     },
     {
       name: "Construtora Alves & Filhos",
-      location: "Itaim Bibi, São Paulo",
+      location: "Vila Comercial, Jundiaí",
       type: "empresa",
       rating: 5,
       image: empresa1,
-      text: "Trabalhamos com a RR Caçamba há mais de 2 anos. Nunca tivemos problemas. São pontuais, organizados e têm ótimos preços para grandes volumes."
+      text: "Trabalhamos com a P&J Entulho há mais de 2 anos. Nunca tivemos problemas. São pontuais, organizados e têm ótimos preços para grandes volumes."
     },
     {
       name: "Incorporadora Urbana SP",
-      location: "Brooklin, São Paulo",
+      location: "Medeiros, Jundiaí",
       type: "empresa",
       rating: 5,
       image: empresa2,
@@ -122,7 +122,7 @@ const Index = () => {
               <Truck className="h-8 w-8 md:h-10 md:w-10 text-white" />
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-primary-foreground">
-                  RR CAÇAMBA
+                  P&J ENTULHO
                 </h1>
                 <p className="text-xs text-primary-foreground/80 hidden sm:block">Aluguel de Caçambas</p>
               </div>
@@ -213,7 +213,7 @@ const Index = () => {
               Soluções em Transporte e Locação
             </h2>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
-              Há mais de 14 anos oferecendo serviços de qualidade em locações, transportes e coletas de entulhos em São Paulo e região.
+              Há mais de 14 anos oferecendo serviços de qualidade em locações, transportes e coletas de entulhos em Jundiaí e região.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
               <Button 
@@ -364,9 +364,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a RR Caçamba</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a P&J Entulho</h2>
               <p className="text-lg mb-4 text-white/90">
-                Com anos de experiência no mercado, a RR Caçamba é referência em aluguel de caçambas e gestão de resíduos na região de São Paulo.
+                Com anos de experiência no mercado, a P&J Entulho é referência em aluguel de caçambas e gestão de resíduos na região de Jundiaí.
               </p>
               <p className="text-lg mb-4 text-white/90">
                 Nossa missão é oferecer soluções eficientes e sustentáveis para o descarte adequado de entulhos, contribuindo para um meio ambiente mais limpo e organizado.
@@ -385,7 +385,7 @@ const Index = () => {
             <div className="relative">
               <img 
                 src={caminhaoRR}
-                alt="Caminhão RR Caçamba"
+                alt="Caminhão P&J Entulho"
                 className="rounded-lg shadow-2xl w-full"
               />
             </div>
@@ -399,7 +399,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">O Que Nossos Clientes Dizem</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
-            <p className="text-lg text-muted-foreground">Avaliações reais de clientes de São Paulo</p>
+            <p className="text-lg text-muted-foreground">Avaliações reais de clientes de Jundiaí</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -577,21 +577,21 @@ const Index = () => {
                   <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium">Endereço</p>
-                    <p className="text-muted-foreground">Rua Teodureto de Camargo, 28 - Vila Celeste<br />São Paulo/SP - CEP: 02543-130</p>
+                    <p className="text-muted-foreground">Rua Professor Rubens Oscar Guelli 297<br />Jardim Ermida II - Jundiaí/SP - CEP: 13212-140</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Building2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium">CNPJ</p>
-                    <p className="text-muted-foreground">20.103.259/0001-75</p>
+                    <p className="text-muted-foreground">30.215.775/0001-45</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Factory className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium">Razão Social</p>
-                    <p className="text-muted-foreground">Rr Cacamba Ss LTDA</p>
+                    <p className="text-muted-foreground">Narciso & Clemente Cacamba de Entulho LTDA</p>
                   </div>
                 </div>
               </div>
@@ -642,7 +642,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-accent text-xl font-bold mb-4">RR CAÇAMBA</h3>
+              <h3 className="text-accent text-xl font-bold mb-4">P&J ENTULHO</h3>
               <p className="text-background/80">Especializada em aluguel de caçambas e gestão de resíduos da construção civil.</p>
             </div>
             <div>
@@ -652,7 +652,7 @@ const Index = () => {
                   <Phone className="h-4 w-4" /> (11) 5192-6487
                 </p>
                 <p className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" /> Rua Teodureto de Camargo, 28 - Vila Celeste - São Paulo/SP
+                  <MapPin className="h-4 w-4" /> Rua Professor Rubens Oscar Guelli 297 - Jardim Ermida II - Jundiaí/SP
                 </p>
               </div>
             </div>
@@ -667,7 +667,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm">
-            <p>&copy; 2023 RR CAÇAMBA - Todos os direitos reservados</p>
+            <p>&copy; 2023 P&J ENTULHO - Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
