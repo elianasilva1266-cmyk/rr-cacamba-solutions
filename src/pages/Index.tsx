@@ -105,12 +105,12 @@ const Index = () => {
     const phone = formData.get("phone");
     const message = formData.get("message");
     
-    const whatsappMessage = `Olá, meu nome é ${name}. Telefone: ${phone}. ${message}`;
+    const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da Cacambas RR. Meu nome é ${name}. Telefone: ${phone}. ${message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://api.whatsapp.com/send/?phone=551151926487&text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send/?phone=5531315737697&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
   };
 
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=551151926487&text=Olá! Gostaria de solicitar um orçamento para os serviços da Cacambas RR.&type=phone_number&app_absent=0";
+  const whatsappLink = "https://api.whatsapp.com/send/?phone=5531315737697&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20os%20servi%C3%A7os%20da%20Cacambas%20RR.&type=phone_number&app_absent=0";
 
   return (
     <div className="min-h-screen">
