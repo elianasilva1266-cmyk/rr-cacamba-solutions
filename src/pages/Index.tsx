@@ -105,7 +105,7 @@ const Index = () => {
     const phone = formData.get("phone");
     const message = formData.get("message");
     
-    const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da Cacambas RR. Meu nome é ${name}. Telefone: ${phone}. ${message}`;
+    const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da BH Caçamba. Meu nome é ${name}. Telefone: ${phone}. ${message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     window.open(`https://api.whatsapp.com/send/?phone=5531315737697&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
   };
@@ -122,7 +122,7 @@ const Index = () => {
               <Truck className="h-8 w-8 md:h-10 md:w-10 text-white" />
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-primary-foreground">
-                  P&J ENTULHO
+                  BH CAÇAMBA
                 </h1>
                 <p className="text-xs text-primary-foreground/80 hidden sm:block">Aluguel de Caçambas</p>
               </div>
@@ -642,17 +642,19 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-accent text-xl font-bold mb-4">P&J ENTULHO</h3>
+              <h3 className="text-accent text-xl font-bold mb-4">BH CAÇAMBA</h3>
               <p className="text-background/80">Especializada em aluguel de caçambas e gestão de resíduos da construção civil.</p>
+              <p className="text-background/60 text-sm mt-2">CNPJ: 00.689.825/0001-65</p>
+              <p className="text-background/60 text-sm">Razão Social: Bh Cacamba LTDA</p>
             </div>
             <div>
               <h3 className="text-accent text-xl font-bold mb-4">Contato</h3>
               <div className="space-y-2 text-background/80">
                 <p className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> (11) 5192-6487
+                  <Phone className="h-4 w-4" /> (31) 3157-37697
                 </p>
                 <p className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" /> Rua Professor Rubens Oscar Guelli 297 - Jardim Ermida II - Jundiaí/SP
+                  <MapPin className="h-4 w-4" /> Rua Juarez Teixeira Pinto, 267 - Bairro das Industrias II - Belo Horizonte/MG - CEP: 30590-525
                 </p>
               </div>
             </div>
@@ -667,7 +669,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm">
-            <p>&copy; 2023 P&J ENTULHO - Todos os direitos reservados</p>
+            <p>&copy; 2025 BH CAÇAMBA - Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
