@@ -27,69 +27,69 @@ import equipamento3 from "@/assets/equipamento-3.jpg";
 import equipamento4 from "@/assets/equipamento-4.jpg";
 import equipamento5 from "@/assets/equipamento-5.jpg";
 import equipamento6 from "@/assets/equipamento-6.jpg";
-
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const equipamentos = [
-    { id: 1, image: equipamento1, name: "Caminhão Caçamba" },
-    { id: 2, image: equipamento2, name: "Caçamba Estacionária" },
-    { id: 3, image: equipamento4, name: "Retroescavadeira" },
-    { id: 4, image: equipamento2, name: "Caçamba Grande" },
-  ];
-
-  const testimonials = [
-    {
-      name: "Carlos Silva",
-      location: "Centro, Jundiaí",
-      type: "pessoa",
-      rating: 5,
-      image: cliente1,
-      text: "Excelente serviço! A caçamba chegou no horário combinado e a retirada foi super rápida. Recomendo demais para quem está fazendo reforma."
-    },
-    {
-      name: "Mariana Santos",
-      location: "Vila Arens, Jundiaí",
-      type: "pessoa",
-      rating: 5,
-      image: cliente2,
-      text: "Empresa muito profissional. Fiz a reforma da minha casa e precisei de 2 caçambas. O atendimento foi perfeito do início ao fim!"
-    },
-    {
-      name: "Rafael Oliveira",
-      location: "Anhangabaú, Jundiaí",
-      type: "pessoa",
-      rating: 5,
-      image: cliente3,
-      text: "Como arquiteto, sempre indico a P&J Entulho para meus clientes. Serviço de qualidade, pontual e com preço justo."
-    },
-    {
-      name: "Dona Maria Conceição",
-      location: "Jardim Ermida, Jundiaí",
-      type: "pessoa",
-      rating: 5,
-      image: cliente4,
-      text: "Precisei limpar meu quintal e eles foram muito atenciosos. Explicaram tudo direitinho e me ajudaram bastante. Muito obrigada!"
-    },
-    {
-      name: "Construtora Alves & Filhos",
-      location: "Vila Comercial, Jundiaí",
-      type: "empresa",
-      rating: 5,
-      image: empresa1,
-      text: "Trabalhamos com a P&J Entulho há mais de 2 anos. Nunca tivemos problemas. São pontuais, organizados e têm ótimos preços para grandes volumes."
-    },
-    {
-      name: "Incorporadora Urbana SP",
-      location: "Medeiros, Jundiaí",
-      type: "empresa",
-      rating: 5,
-      image: empresa2,
-      text: "Parceiro confiável para nossos empreendimentos. Já utilizamos em mais de 15 obras e sempre com excelente resultado. Equipe muito profissional!"
-    }
-  ];
-
+  const equipamentos = [{
+    id: 1,
+    image: equipamento1,
+    name: "Caminhão Caçamba"
+  }, {
+    id: 2,
+    image: equipamento2,
+    name: "Caçamba Estacionária"
+  }, {
+    id: 3,
+    image: equipamento4,
+    name: "Retroescavadeira"
+  }, {
+    id: 4,
+    image: equipamento2,
+    name: "Caçamba Grande"
+  }];
+  const testimonials = [{
+    name: "Carlos Silva",
+    location: "Centro, Jundiaí",
+    type: "pessoa",
+    rating: 5,
+    image: cliente1,
+    text: "Excelente serviço! A caçamba chegou no horário combinado e a retirada foi super rápida. Recomendo demais para quem está fazendo reforma."
+  }, {
+    name: "Mariana Santos",
+    location: "Vila Arens, Jundiaí",
+    type: "pessoa",
+    rating: 5,
+    image: cliente2,
+    text: "Empresa muito profissional. Fiz a reforma da minha casa e precisei de 2 caçambas. O atendimento foi perfeito do início ao fim!"
+  }, {
+    name: "Rafael Oliveira",
+    location: "Anhangabaú, Jundiaí",
+    type: "pessoa",
+    rating: 5,
+    image: cliente3,
+    text: "Como arquiteto, sempre indico a P&J Entulho para meus clientes. Serviço de qualidade, pontual e com preço justo."
+  }, {
+    name: "Dona Maria Conceição",
+    location: "Jardim Ermida, Jundiaí",
+    type: "pessoa",
+    rating: 5,
+    image: cliente4,
+    text: "Precisei limpar meu quintal e eles foram muito atenciosos. Explicaram tudo direitinho e me ajudaram bastante. Muito obrigada!"
+  }, {
+    name: "Construtora Alves & Filhos",
+    location: "Vila Comercial, Jundiaí",
+    type: "empresa",
+    rating: 5,
+    image: empresa1,
+    text: "Trabalhamos com a P&J Entulho há mais de 2 anos. Nunca tivemos problemas. São pontuais, organizados e têm ótimos preços para grandes volumes."
+  }, {
+    name: "Incorporadora Urbana SP",
+    location: "Medeiros, Jundiaí",
+    type: "empresa",
+    rating: 5,
+    image: empresa2,
+    text: "Parceiro confiável para nossos empreendimentos. Já utilizamos em mais de 15 obras e sempre com excelente resultado. Equipe muito profissional!"
+  }];
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -97,23 +97,18 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name");
     const phone = formData.get("phone");
     const message = formData.get("message");
-    
     const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da BH Caçamba. Meu nome é ${name}. Telefone: ${phone}. ${message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     window.open(`https://api.whatsapp.com/send/?phone=5531315737697&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
   };
-
   const whatsappLink = "https://api.whatsapp.com/send/?phone=5531315737697&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20os%20servi%C3%A7os%20da%20Cacambas%20RR.&type=phone_number&app_absent=0";
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary shadow-lg' : 'bg-primary/95'}`}>
         <div className="container mx-auto px-4">
@@ -147,46 +142,22 @@ const Index = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] bg-primary border-l border-primary-foreground/20">
                 <nav className="flex flex-col gap-6 mt-8">
-                  <a 
-                    href="#home" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#home" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Início
                   </a>
-                  <a 
-                    href="#services" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#services" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Serviços
                   </a>
-                  <a 
-                    href="#equipamentos" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#equipamentos" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Equipamentos
                   </a>
-                  <a 
-                    href="#about" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#about" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Sobre
                   </a>
-                  <a 
-                    href="#politica" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#politica" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Política
                   </a>
-                  <a 
-                    href="#contact" 
-                    className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#contact" className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>
                     Contato
                   </a>
                 </nav>
@@ -199,14 +170,11 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 bg-black/75"></div>
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: `url(${heroConstruction})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
+        <div className="absolute inset-0" style={{
+        backgroundImage: `url(${heroConstruction})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -216,21 +184,13 @@ const Index = () => {
               Há mais de 14 anos oferecendo serviços de qualidade em locações, transportes e coletas de entulhos em Jundiaí e região.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-              <Button 
-                size="lg" 
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-                onClick={() => window.open(whatsappLink, '_blank')}
-              >
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1" onClick={() => window.open(whatsappLink, '_blank')}>
                 <Phone className="mr-2 h-5 w-5" />
                 Solicitar Orçamento
               </Button>
-              <Button 
-                size="lg" 
-                className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-                onClick={() => window.open(whatsappLink, '_blank')}
-              >
+              <Button size="lg" className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold text-base md:text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1" onClick={() => window.open(whatsappLink, '_blank')}>
                 <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 Chamar no WhatsApp
               </Button>
@@ -251,11 +211,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={cacambaLaranja} 
-                  alt="Caçamba de Entulho RR"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <img src={cacambaLaranja} alt="Caçamba de Entulho RR" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Aluguel de Caçambas</h3>
@@ -265,11 +221,7 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://www.carmo.rj.gov.br/media/k2/items/cache/f863e4fb1b47b206b2276d9b70a5b183_XL.webp?t=20211222_120800" 
-                  alt="Coleta de Entulho"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <img src="https://www.carmo.rj.gov.br/media/k2/items/cache/f863e4fb1b47b206b2276d9b70a5b183_XL.webp?t=20211222_120800" alt="Coleta de Entulho" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-3">Coleta de Entulho</h3>
@@ -279,11 +231,7 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://www.terradecultivo.com.br/tcsolucoesambientais/wp-content/uploads/2021/04/Plano-de-Gerenciamento-de-Residuos-Solidos1.png" 
-                  alt="Gestão de Resíduos"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <img src="https://www.terradecultivo.com.br/tcsolucoesambientais/wp-content/uploads/2021/04/Plano-de-Gerenciamento-de-Residuos-Solidos1.png" alt="Gestão de Resíduos" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-3">Gestão de Resíduos</h3>
@@ -331,29 +279,17 @@ const Index = () => {
           <div className="relative">
             <div className="flex animate-scroll-left">
               {/* Primeira sequência */}
-              {equipamentos.map((equipamento) => (
-                <div key={`first-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
+              {equipamentos.map(equipamento => <div key={`first-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
                   <div className="bg-white rounded-lg p-6 flex items-center justify-center h-48 hover:shadow-lg transition-all duration-300">
-                    <img 
-                      src={equipamento.image} 
-                      alt={equipamento.name}
-                      className="w-full h-full object-contain"
-                    />
+                    <img src={equipamento.image} alt={equipamento.name} className="w-full h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
               {/* Segunda sequência (duplicada para loop infinito) */}
-              {equipamentos.map((equipamento) => (
-                <div key={`second-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
+              {equipamentos.map(equipamento => <div key={`second-${equipamento.id}`} className="flex-shrink-0 w-64 mx-4">
                   <div className="bg-white rounded-lg p-6 flex items-center justify-center h-48 hover:shadow-lg transition-all duration-300">
-                    <img 
-                      src={equipamento.image} 
-                      alt={equipamento.name}
-                      className="w-full h-full object-contain"
-                    />
+                    <img src={equipamento.image} alt={equipamento.name} className="w-full h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -364,7 +300,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a P&J Entulho</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a BH Caçamba</h2>
               <p className="text-lg mb-4 text-white/90">
                 Com anos de experiência no mercado, a P&J Entulho é referência em aluguel de caçambas e gestão de resíduos na região de Jundiaí.
               </p>
@@ -383,11 +319,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src={caminhaoRR}
-                alt="Caminhão P&J Entulho"
-                className="rounded-lg shadow-2xl w-full"
-              />
+              <img src={caminhaoRR} alt="Caminhão P&J Entulho" className="rounded-lg shadow-2xl w-full" />
             </div>
           </div>
         </div>
@@ -403,8 +335,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            {testimonials.map((testimonial, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <Avatar className="h-16 w-16 border-2 border-primary">
@@ -417,23 +348,18 @@ const Index = () => {
                         <MapPin className="h-3 w-3" />
                         {testimonial.location}
                       </p>
-                      {testimonial.type === "empresa" && (
-                        <p className="text-xs text-primary font-medium mt-1 flex items-center gap-1">
+                      {testimonial.type === "empresa" && <p className="text-xs text-primary font-medium mt-1 flex items-center gap-1">
                           <Building2 className="h-3 w-3" />
                           Pessoa Jurídica
-                        </p>
-                      )}
+                        </p>}
                     </div>
                   </div>
                   <div className="flex gap-1 mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}
                   </div>
                   <p className="text-muted-foreground italic">"{testimonial.text}"</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -595,13 +521,9 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <Button 
-                size="lg"
-                className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold w-full md:w-auto"
-                onClick={() => window.open(whatsappLink, '_blank')}
-              >
+              <Button size="lg" className="bg-whatsapp text-white hover:bg-whatsapp-dark font-bold w-full md:w-auto" onClick={() => window.open(whatsappLink, '_blank')}>
                 <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 Fale Conosco no WhatsApp
               </Button>
@@ -675,19 +597,11 @@ const Index = () => {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-whatsapp text-white rounded-full p-4 shadow-2xl hover:bg-whatsapp-dark transition-all hover:scale-110 animate-pulse-scale"
-        aria-label="Fale conosco no WhatsApp"
-      >
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-50 bg-whatsapp text-white rounded-full p-4 shadow-2xl hover:bg-whatsapp-dark transition-all hover:scale-110 animate-pulse-scale" aria-label="Fale conosco no WhatsApp">
         <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
       </a>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
