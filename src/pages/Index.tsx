@@ -105,9 +105,9 @@ const Index = () => {
     const message = formData.get("message");
     const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da BH Caçamba. Meu nome é ${name}. Telefone: ${phone}. ${message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://api.whatsapp.com/send/?phone=5511916629327&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
+    window.open(`https://api.whatsapp.com/send/?phone=553131573769&text=${encodedMessage}&type=phone_number&app_absent=0`, '_blank');
   };
-  const whatsappLink = "https://api.whatsapp.com/send/?phone=5511916629327&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20os%20servi%C3%A7os%20da%20BH%20Ca%C3%A7amba.&type=phone_number&app_absent=0";
+  const whatsappLink = "https://api.whatsapp.com/send/?phone=553131573769&text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20os%20servi%C3%A7os%20da%20Cacambas%20RR.&type=phone_number&app_absent=0";
   return <div className="min-h-screen">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary shadow-lg' : 'bg-primary/95'}`}>
@@ -573,7 +573,7 @@ const Index = () => {
               <h3 className="text-accent text-xl font-bold mb-4">Contato</h3>
               <div className="space-y-2 text-background/80">
                 <p className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> (11) 91662-9327
+                  <Phone className="h-4 w-4" /> (31) 3157-3769
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" /> Rua Juarez Teixeira Pinto, 267 - Bairro das Industrias II - Belo Horizonte/MG - CEP: 30590-525
